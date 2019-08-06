@@ -17,7 +17,6 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemsArr.count
     }
@@ -37,6 +36,7 @@ class TableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textfield = UITextField()
