@@ -28,7 +28,7 @@
         <!--Todo-->
         <scene sceneID="yK9-nL-qLc">
             <objects>
-                <tableViewController id="Yvz-bt-wdJ" customClass="TableViewController" customModule="UdemyTodoey" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Yvz-bt-wdJ" customClass="TableViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3EO-HH-cwF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,14 @@
                             <outlet property="delegate" destination="Yvz-bt-wdJ" id="ggx-eS-IQT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todo" id="ao3-Ky-045"/>
+                    <navigationItem key="navigationItem" title="Todo" id="ao3-Ky-045">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="utN-hr-43E">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Yvz-bt-wdJ" id="V7F-po-Rcr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AJ-t1-9Ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

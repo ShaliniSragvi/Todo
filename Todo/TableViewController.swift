@@ -10,7 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let itemsArr = ["Buy Apples", "Oranges", "Grapes"]
+    var itemsArr = ["Buy Apples", "Oranges", "Grapes"]
+//    var itemsArr:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,6 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
         cell.textLabel?.text = itemsArr[indexPath.row]
-        
         return cell
     }
     
@@ -37,9 +37,30 @@ class TableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textfield = UITextField()
+        
+        let alert = UIAlertController(title: "Add Item to Todo", message: "Please enter item name", preferredStyle: .alert)
+        alert.addTextField { (alertTextfield) in
+        
+            textfield = alertTextfield
+            
+        }
+        let addItemAction = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            print(textfield.text!)
+            self.itemsArr.append(textfield.text!)
+            
+            self.tableView.reloadData()
+            
+        }
+        
+        alert.addAction(addItemAction)
+        present(alert, animated: true, completion: nil)
+        
+    }
     
-    
-
+   
 
 }
 
